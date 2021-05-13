@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@300;700&display=swap');
+
+html {
+    font-size: 100%;
+    font-family: 'Chivo', sans-serif;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: $veryDarkBlackBlue;
+
+    /*
+    &::before {
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        content: "";
+        background-image: url('/bgmatch/Mobile.png');
+        background-size: cover;
+        opacity: 0.45;
+        pointer-events: none;
+
+        @include breakpoint-up(medium) {
+            background-image: url('/bgmatch/Tablet.png');
+        }
+
+        @include breakpoint-up(large) {
+            background-image: url('/bgmatch/Desktop.png');
+        }
+    }
+    */
+    
+    
+    &::before {
+        z-index: -2;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('/assets/mobile/image-host.jpg');
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        filter: brightness(10%);
+
+        @include breakpoint-up(medium) {
+            background-image: url('/assets/tablet/image-host.jpg');
+            background-size: auto;
+            background-position: right top;
+            background-repeat: no-repeat;
+            filter: none;
+        }
+
+        @include breakpoint-up(large) {
+            background-image: url('/assets/desktop/image-host.jpg');
+            background-position: right center;
+        }
+    }
+    
+    
+    &::after {
+        z-index: -1;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $veryDarkBlackBlue;
+        opacity: 58%;
+
+        @include breakpoint-up(medium) {
+            display: none;
+        }
+    }
+
+}
+
+// font sizes(lh)(ls)
+//     mob    > tab    > desk
+//  h1 26(38) > 48(56) > 52(62) -- w300
+//   p 15(25) > 18(28)          -- w300
+// btn 14(28)                   -- w700
+// inp 14(28)                   -- w700
+
+h1 {
+    font-size: 1.625rem;
+    line-height: 2.375rem;
+    font-weight: 300;
+    color: $limeGreen;
+    text-align: center;
+    text-transform: uppercase;
+
+    .highlight {
+        color: white;
+    }
+}
+
+p {
+    font-size: 0.9375rem;
+    line-height: 1.5625rem;
+    font-weight: 300;
+    color: $lightBluishGray;
+    text-align: center;
+}
+
+button, input {
+    font-family: 'Chivo', sans-serif;
+    font-size: 0.875rem;
+    line-height: 2em;
+    font-weight: 700;
+}
+
+@include breakpoint-up(medium) {
+    h1 {
+        font-size: 3rem;
+        line-height: 3.5rem;
+        text-align: left;
+    }
+    
+    p {
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+        text-align: left;
+    }
+}
+
+@include breakpoint-up(large) {
+    h1 {
+        font-size: 3.25rem;
+        line-height: 3.875rem;
+    }
+}
+
+.cta-request-access {
+    width: 100%;
+    height: 2.875rem;
+    border: none;
+    border-radius: 1.4375rem;
+    background-color: $limeGreen;
+    color: $veryDarkBlackBlue;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $fadedLimeGreen;
+    }
+
+    &:active {
+        transform: scale(99%, 99%);
+    }
+
+    @include breakpoint-up(medium) {
+        width: 10.125rem;
+    }
+}
+
+.email-input {
+    width: 100%;
+    height: 2.875rem;
+    border: none;
+    border-radius: 1.4375rem;
+    background-color: $darkBluishGray;
+    
+    padding-left: 2rem;
+    color: white;
+
+    &:focus {
+        outline: none;
+    }
+
+}

@@ -1,0 +1,193 @@
+.logo {
+    display: block;
+    margin: 62px auto 0;
+
+    @include breakpoint-up(medium) {
+        margin: 50px 0 0 39px;
+    }
+
+    @include breakpoint-up(large) {
+        margin: 102px 0 0 165px;
+    }
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 57px;
+    padding: 0 1.5rem 0;
+    opacity: 58%;
+
+    h1 {
+        margin: 0 0 1rem;
+    }
+
+    p {
+        margin: 0 0 2rem;
+    }
+
+    @include breakpoint-up(medium) {
+        align-items: flex-start;
+        margin-top: 152px;
+        margin-right: 94px;
+        padding: 5.8125rem 2.4375rem 0;
+        background-color: $veryDarkBlackBlue;
+        opacity: 1;
+
+        h1 {
+            margin: 0 0 2rem;
+        }
+
+        p {
+            width: 75%;
+            margin: 0 0 2.5rem;
+        }
+    }
+
+    @include breakpoint-up(large) {
+
+
+        margin: 103px 38.3% 0 11.45%;
+        padding: 5.5rem 0 0;
+
+        background-color: $veryDarkBlackBlue;
+        opacity: 1;
+
+        h1 {
+            margin: 0 0 1.5rem;
+        }
+
+        p {
+            width: 62%;
+            margin: 0 0 2.5rem;
+        }
+    }
+}
+
+.podcast-icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8px 0;
+    width: 100%;
+
+    .podcast-icon {
+        height: 17px;
+
+        &.google-icon {
+            height: 11px;
+        }
+
+        &.pocketcasts-icon {
+            height: 15px;
+        }
+    }
+
+    @include breakpoint-up(medium) {
+        order: 4;
+        padding: 0;
+        width: 90%;
+
+        .podcast-icon {
+            height: 29px;
+
+            &.apple-icon {
+                margin-left: 13px;
+            }
+    
+            &.google-icon {
+                height: 18px;
+                margin-left: 13px;
+            }
+    
+            &.pocketcasts-icon {
+                height: 26px;
+            }
+        }
+
+    }
+    @include breakpoint-up(large) {
+        width: 74%;
+    }
+}
+
+.email-form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    margin-top: 3rem;
+
+    button {
+        margin-top: 1rem;
+    }
+
+    .email-error {
+        display: none;
+        font-size: 0.75rem;
+        color: $errorRed;
+        position: absolute;
+        left: 2rem;
+        top: -1.5rem;
+
+        &.show-error {
+            display: block;
+        }
+    }
+
+    @include breakpoint-up(medium) {
+        order: 3;
+
+        display: block;
+        width: 71.5%;
+
+        margin: 0 0 4rem;
+
+        .email-error {
+            top: auto;
+        }
+
+        input {
+            height: 3.5rem;
+        }
+
+        button {
+            position: absolute;
+            margin: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 5px;
+
+            &:active {
+                transform: translateY(-50%) scale(99%, 99%);
+            }
+        }
+    }
+
+    @include breakpoint-up(large) {
+        width: 59%;
+    }
+}
+
+.green-dots {
+    display: none;
+
+    @include breakpoint-up(medium) {
+        display: inline-block;
+        position: absolute;
+        bottom: 0;
+        left: 30px;
+    }
+
+    @include breakpoint-up(large) {
+        right: 0;
+        left: auto;
+        bottom: 78px;
+    }
+
+}
